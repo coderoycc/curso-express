@@ -85,11 +85,24 @@ app.get('/hello/:username/:random', (req, res) => {
 })
 
 
+// QUERYS
+app.get('/query', (req, res) => {
+  console.log(req.query)
+  res.send('Recibido')
+})
+
+app.get('/search', (req, res) => {
+  if(req.query.q){
+    return res.send(`Su búsqueda "${req.query.q}" será procesada`)
+  }
+  res.send('Búsqueda: encuentra lo que busca')
+})
+
 
 // Esta página se cargará despues de consultar las anteriores
 app.use((req, res) => {
   // Respondemos con un status 404 de no encontrado
-  res.status(404).send('No se encontro la página que busca')
+  res.status(404).send('No se encontró la página que busca')
 })
 
 
