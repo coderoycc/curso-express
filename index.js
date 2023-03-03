@@ -39,7 +39,6 @@ app.use(express.urlencoded({ extended: false }))
 app.get('/', (req, res) => { // Cuando visiten la raiz
   // Ruta desde el sistema inicial hasta este proyecto
   console.log(__dirname)
-
   // Enviamos el archivo html mendiate sendFile(ruta, {ruta-raiz base})
   res.sendFile('./static/index.html', { root: __dirname })
 })
@@ -80,19 +79,20 @@ app.post('/form', (req, res) => {
 })
 
 
+// Parametros (PARAMS)
+app.get('/hello/:username/:random', (req, res) => {
+  res.send(`Recibido, ${req.params.username}, ${req.params.random}`)
+})
+
+
+
 // Esta página se cargará despues de consultar las anteriores
 app.use((req, res) => {
   // Respondemos con un status 404 de no encontrado
   res.status(404).send('No se encontro la página que busca')
 })
+
+
 app.listen(3000, () => {
   console.log("Aplicacion con EXPRESS corriendo en el puerto 3000")
 })
-
-
-
-
-
-
-
-
