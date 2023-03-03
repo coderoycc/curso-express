@@ -47,9 +47,14 @@ Las variables son los parámetros que se esperan en la ruta y se recuperan con `
 ```js
 app.use((req, res, next) => {
   //Operaciones
+  console.log(req.url, req.method)
+
+  // Proteger las rutas (PONER ANTES DE LAS RUTAS A PROTEGER)
+  //autenticacion 
+  // Permisos de usuario}
 
   next() 
   // Para pasar a que muestre la ruta
 })
 ```
-
+- Instalando MORGAN tenemos middleware pre-creado 
