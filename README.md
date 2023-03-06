@@ -71,3 +71,9 @@ app.use((req, res, next) => {
 - Los nombre de las carpetas suelen llamarse public o static
 - Si se requiere declara más carpetas públicas - estáticas se pone en otro middleware
 
+## EXPRESS ROUTER
+- Nos permite dividir las rutas en diferentes archivos para que sea mantenible.
+- Una forma es usando JavaScrio con el módulo **export** (usando archivos de routejs)
+- Usando el método de **express.Router()**
+  * Este método permite que se exporten desde otro archivo y se ejecuten en el archivo principal como un MIDDLEWARE
+

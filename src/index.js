@@ -25,6 +25,13 @@
 const { json } = require('express')
 const express = require('express')
 const path = require('path')
+
+// Usando routerjs
+const UsersRoutes = require('./routejs/users')
+
+// Usando Router() de express
+const QueryRoutes = require('./router/query')
+
 // Declaramos la aplicacion 
 const app = express()
 
@@ -53,9 +60,8 @@ app.get('/', (req, res) => { // Cuando visiten la raiz
   res.sendFile('./static/index.html', { root: __dirname })
 })
 
-app.get('/about', (req, res) => {
-  res.send('<h1>Esta página describe más de nosotros</h1>')
-})
+// Rutas convencionales con exports 
+UsersRoutes(app)
 
 app.get('/clima', (req, res) => {
   res.send('Enviamos datos del clima')
@@ -95,18 +101,9 @@ app.get('/hello/:username/:random', (req, res) => {
 })
 
 
-// QUERYS
-app.get('/query', (req, res) => {
-  console.log(req.query)
-  res.send('Recibido')
-})
+// QUERYS usando Router de express
+app.use(QueryRoutes)
 
-app.get('/search', (req, res) => {
-  if(req.query.q){
-    return res.send(`Su búsqueda "${req.query.q}" será procesada`)
-  }
-  res.send('Búsqueda: encuentra lo que busca')
-})
 
 // MIDDLEWARE de archivos publicos
 app.use(express.static(path.join(__dirname,'static'))) // Tambien se puede poner un prefijo
