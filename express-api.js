@@ -19,7 +19,7 @@ app.get('/products', (req, res) => {
 app.get('/products/:id', (req, res) => {
   const id = req.params.id;
   const product = products.find((p) => { return p.id === Number(id) })
-  if(!product) return res.status(404).send('no encontrado')
+  if (!product) return res.status(404).send('no encontrado')
   res.send(product)
 })
 
@@ -34,9 +34,9 @@ app.put('/products/:id', (req, res) => { // Actualizar
   const id = req.params.id;
   const data = req.body
   const product = products.find((p) => { return p.id === Number(id) })
-  if(!product) return res.status(404).send('no encontrado')
-  
-  products = products.map((p) => p.id === Number(id) ? {...p, ...data} : p )
+  if (!product) return res.status(404).send('no encontrado')
+
+  products = products.map((p) => p.id === Number(id) ? { ...p, ...data } : p)
   res.json({
     msg: "OK"
   })
@@ -45,8 +45,8 @@ app.put('/products/:id', (req, res) => { // Actualizar
 app.delete('/products/:id', (req, res) => {
   const id = req.params.id;
   const product = products.find((p) => { return p.id === Number(id) })
-  if(!product) return res.status(404).send('no encontrado')
-  
+  if (!product) return res.status(404).send('no encontrado')
+
   products = products.filter((p) => p.id !== Number(id))
   res.send("Valor eliminado")
 })

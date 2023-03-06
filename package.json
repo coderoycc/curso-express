@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "npx nodemon index.js",
+    "dev": "npx nodemon src/index.js",
     "api": "npx nodemon express-api.js"
   },
   "dependencies": {

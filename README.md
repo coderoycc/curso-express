@@ -59,4 +59,15 @@ app.use((req, res, next) => {
 ```
 - Instalando MORGAN tenemos middleware pre-creado
 
+## CONFIGURACIONES EN EXPRESS
+- Se definen desde la instancia de la aplicacion `app.set('llave', 'Valor')`
+- Estas configuraciones se podran acceder con `app.get('llave')`
+
+## STATICS FILES 
+- Express permite declarar una carpeta que sea estática que puede ser accedida desde cualquier navegador.
+- Para usarla se declara un MIDDLEWARE `app.use(express.static('./carpeta'))`
+- Comunmente siempre va al final, para que primero se busquen solo rutas y finalmente archivos publicos
+- También se puede poner un prefijo para poder diferenciar los archivos públicos de las rutas. `app.use('/public',express.static('./carpeta'))` 
+- Los nombre de las carpetas suelen llamarse public o static
+- Si se requiere declara más carpetas públicas - estáticas se pone en otro middleware
 

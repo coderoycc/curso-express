@@ -24,10 +24,19 @@
 
 const { json } = require('express')
 const express = require('express')
-
+const path = require('path')
 // Declaramos la aplicacion 
 const app = express()
 
+// Configuraciones personalizadas
+app.set('appName', 'Curso de Express')
+app.set('port', 3000)
+
+// Configuraciones ya definidas
+app.set('case sensitive routing', true) 
+
+
+// MIDDLEWARES
 // recepción de texto con express
 app.use(express.text())
 // Recepción de json con express
@@ -36,6 +45,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 
+// RUTAS
 app.get('/', (req, res) => { // Cuando visiten la raiz
   // Ruta desde el sistema inicial hasta este proyecto
   console.log(__dirname)
@@ -98,6 +108,10 @@ app.get('/search', (req, res) => {
   res.send('Búsqueda: encuentra lo que busca')
 })
 
+// MIDDLEWARE de archivos publicos
+app.use(express.static(path.join(__dirname,'static'))) // Tambien se puede poner un prefijo
+
+app.use('/uploads',express.static(path.join(__dirname, 'uploads')))
 
 // Esta página se cargará despues de consultar las anteriores
 app.use((req, res) => {
