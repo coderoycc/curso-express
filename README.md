@@ -95,3 +95,9 @@ app.use((req, res, next) => {
 - **USAMOS npm AXIOS para hacer peticiones a otros servidores**
 - Usamos también, **json placeholder** que contiene datos que envian en forma de API
 
+## CONEXION CON UNA BASE DE DATOS
+- Se usa un controlador instalandolo desde **npm**
+- Usaremos una cuenta remota de MySQL en planetscale (DB:betto)
+- Instalamos drivers de mysql **npm i mysql2**
+- _Averiguar conexión con planetscale -> usamos cuenta github umsa_
+

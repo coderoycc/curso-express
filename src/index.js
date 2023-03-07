@@ -24,6 +24,7 @@
 const { json } = require('express')
 const express = require('express')
 const path = require('path')
+const connectDB = require('./db')
 require('ejs')
 // Usando routerjs
 const UsersRoutes = require('./routejs/users')
@@ -34,6 +35,9 @@ const PostsRoutes = require('./router/posts')
 
 // Declaramos la aplicacion 
 const app = express()
+
+// Conexion a la base de datos  
+connectDB()
 
 // Configuraciones personalizadas
 app.set('appName', 'Curso de Express')
