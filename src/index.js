@@ -21,11 +21,10 @@
 
 
 // EXPRESS
-
 const { json } = require('express')
 const express = require('express')
 const path = require('path')
-
+require('ejs')
 // Usando routerjs
 const UsersRoutes = require('./routejs/users')
 
@@ -40,8 +39,9 @@ app.set('appName', 'Curso de Express')
 app.set('port', 3000)
 
 // Configuraciones ya definidas
-app.set('case sensitive routing', true) 
-
+app.set('case sensitive routing', true) // sensible a mayus
+app.set('view engine', 'ejs')
+app.set('views', path.join(__dirname,'views'))
 
 // MIDDLEWARES
 // recepción de texto con express

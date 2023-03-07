@@ -1,9 +1,10 @@
 /**
  * Manera tradicional de usar route para express 
  */
-function UsersRoutes(app){
+function UsersRoutes(app) {
   app.all('/users', (req, res) => {
-    res.send('Página donde se muestran los usuarios')
+    //Usamos render para renderizar archivos (vistas) EJS
+    res.render('user', { title: 'HOLA AMIGO' })
   })
 
   app.get('/about', (req, res) => {

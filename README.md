@@ -77,3 +77,10 @@ app.use((req, res, next) => {
 - Usando el método de **express.Router()**
   * Este método permite que se exporten desde otro archivo y se ejecuten en el archivo principal como un MIDDLEWARE
 
+## TEMPLATE ENGINE
+- Nos permite crear plantillas html usando javascript con el motor de express
+- Para el curso se utiliza EJS como motor de vistas `view engine`
+* En el archivo principal se debe importar la libreria EJS
+* Después de eso, configurar express con `app.set('view engine', 'ejs')` y con `app.set('views', ruta_de_la_carpeta_views)`
+* En la carpeta views escribir codigo html en archivos con extensión _ejs_ 
+* Para mostrar el archivo en alguna ruta usar `res.render('nombreArchivo', { variables })` el nombre del archivo va sin extensión y las variables que se pueden usar en el archivo _.ejs_ se envian en un objeto  
