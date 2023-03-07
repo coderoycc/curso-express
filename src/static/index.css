@@ -1,5 +1,6 @@
 body{
   background-color: #202020;
-  color: red;
+  color: #ddd;
 }
 /* Archivo que se carga en index.html */
+/* Archivo publico que también se usa en archivos EJS*/

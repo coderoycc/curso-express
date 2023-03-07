@@ -83,4 +83,9 @@ app.use((req, res, next) => {
 * En el archivo principal se debe importar la libreria EJS
 * Después de eso, configurar express con `app.set('view engine', 'ejs')` y con `app.set('views', ruta_de_la_carpeta_views)`
 * En la carpeta views escribir codigo html en archivos con extensión _ejs_ 
-* Para mostrar el archivo en alguna ruta usar `res.render('nombreArchivo', { variables })` el nombre del archivo va sin extensión y las variables que se pueden usar en el archivo _.ejs_ se envian en un objeto  
+* Para mostrar el archivo en alguna ruta usar `res.render('nombreArchivo', { variables })` el nombre del archivo va sin extensión y las variables que se pueden usar en el archivo _.ejs_ se envian en un objeto 
+
+## MÁS SOBRE EJS (PARTIALS|porciones)
+- Una utilidad de EJS es que se puede incrustar porciones de html en otros archivos para volver a utilizar
+
+**NOTA**: Tambien existen otros motores de Plantillas como HANDLEBARS

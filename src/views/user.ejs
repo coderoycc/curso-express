@@ -1,12 +1,27 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EJS con express</title>
-</head>
-<body>
+<%- include('partials/header'); %>
   <h1>Este es un titulo con EJS-Express</h1>
-</body>
-</html>
+  <% if (server) {%>
+    <h3>El server esta activo</h3>
+  <% }else{ %>
+    <h3>El server no está activo :(</h3>
+  <%}%>
+  <!-- Usamos código de Javascript -->
+  <%= new Date()%>
+  <center>
+    <table border="1">
+      
+      <thead>
+        <td>ID</td>
+        <td>NOMBRE</td>
+      </thead>
+      <% for(const x of users){ %>
+      <tr>
+        <td><%= x.id %></td>
+        <td><%= x.name %></td>
+      </tr>
+      <%}%>
+    </table>
+  </center>
+    
+
+<%- include('partials/footer'); %>
