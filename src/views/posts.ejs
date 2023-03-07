@@ -1,0 +1,10 @@
+<%- include('partials/header'); %>
+<h1>POSTS</h1>
+
+<% for(const x of posts){%>
+  <div style="margin:100px">
+    <h1><%= x.id+". "+x.title.toUpperCase() %></h1>
+    <p><%= x.body %></p>
+  </div>
+<%} %>
+<%- include('partials/footer'); %>

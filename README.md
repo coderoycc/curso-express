@@ -89,3 +89,9 @@ app.use((req, res, next) => {
 - Una utilidad de EJS es que se puede incrustar porciones de html en otros archivos para volver a utilizar
 
 **NOTA**: Tambien existen otros motores de Plantillas como HANDLEBARS
+
+## FUNCIONES ASINCRONAS EN EXPRESS
+- Sirve para realizar peticiones a otros servidores (Bases de datos, servidores externos)
+- **USAMOS npm AXIOS para hacer peticiones a otros servidores**
+- Usamos también, **json placeholder** que contiene datos que envian en forma de API
+

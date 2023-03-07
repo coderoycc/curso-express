@@ -30,6 +30,7 @@ const UsersRoutes = require('./routejs/users')
 
 // Usando Router() de express
 const QueryRoutes = require('./router/query')
+const PostsRoutes = require('./router/posts')
 
 // Declaramos la aplicacion 
 const app = express()
@@ -104,6 +105,8 @@ app.get('/hello/:username/:random', (req, res) => {
 // QUERYS usando Router de express
 app.use(QueryRoutes)
 
+// Uso de router de express
+app.use(PostsRoutes)
 
 // MIDDLEWARE de archivos publicos
 app.use(express.static(path.join(__dirname,'static'))) // Tambien se puede poner un prefijo
